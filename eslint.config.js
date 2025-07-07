@@ -9,6 +9,17 @@ const commonPlugins = {
 
 const commonRules = {
   ...prettierRecommended.rules,
+  "no-unused-vars": [
+    "error",
+    {
+      vars: "all",
+      args: "all",
+      argsIgnorePattern: "^_",
+      caughtErrors: "all",
+      ignoreRestSiblings: false,
+      reportUsedIgnorePattern: false,
+    },
+  ],
   "prettier/prettier": "error",
 };
 

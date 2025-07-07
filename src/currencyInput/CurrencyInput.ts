@@ -1,5 +1,3 @@
-// import { CurrencyHelper } from "../helpers/CurrencyHelper";
-
 const unfocusedInputType = "text";
 const focusedInputType = "number";
 
@@ -61,7 +59,7 @@ export class CurrencyInput {
     document.head.appendChild(style);
   }
 
-  private handleOnFocusIn(event: Event) {
+  private handleOnFocusIn() {
     this._inputElement.type = focusedInputType;
     this._inputElement.min = "0";
     this._inputElement.step = "0.01";
@@ -69,7 +67,7 @@ export class CurrencyInput {
     this._inputElement.value = this.formatAmountToString();
   }
 
-  private handleOnBlur(event: Event) {
+  private handleOnBlur() {
     this._inputElement.type = unfocusedInputType;
     this._inputElement.removeAttribute("min");
     this._inputElement.removeAttribute("step");
